@@ -11,9 +11,9 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check p
 @command(outgoing=True, pattern="^.alive$")
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
-    await alive.edit("**`ᎽϴႮᎡ ᏴϴͲ ᏆՏ ᎡႮΝΝᏆΝᏀψ(｀∇´)ψ`**\n\n"
+    await alive.edit("**`Your bot is running ｀∇´)ψ`**\n\n"
                      "`Telethon version: 6.9.0\nPython: 3.7.3\n"
-                     "`Bot modded by:` [Rajdeshmukh7](tg://user?id=1032532939)\n"
+                     "`Bot modded by:` [@Rajdeshmukh7]\n"
                      "`Database Status: Databases functioning normally!\n\nAlways with you, my master!\n`"
                      f"`My peru owner`: {DEFAULTUSER}\n"
                      "[Deploy this userbot Now](https://github.com/rajdeshmukh7/Uniborg-extended)")
