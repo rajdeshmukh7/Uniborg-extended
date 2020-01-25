@@ -29,7 +29,7 @@ from telethon.tl.types import (
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check pinned in @XtraTgBot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check pinned in @botcritics"
 
 @borg.on(admin_cmd(pattern="kang ?(.*)"))
 async def _(event):
@@ -46,8 +46,8 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"@A_Dark_Princ3 ki gufa me {userid}"
-    packshortname = f"Anubis_ki_gufa_me_{userid}"  # format: Uni_Borg_userid
+    packname = f"{user.first_name} Pack  {userid}"
+    packshortname = f"{user.first_name}_pack_{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "@UniBorg_Sticker.png"
@@ -56,11 +56,11 @@ async def _(event):
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"{userid}'s @AnimatedStickersGroup"
+        packname = f"{user.first_name}'s Animated kang pack"
         if userid == 719877937:
-            packshortname = "TheAnubis_Animated"
+            packshortname = "TheKANGpack_Animated"
         else:
-            packshortname = f"Uni_Borg_{userid}_as" # format: Uni_Borg_userid
+            packshortname = f"Kang_Pack_{userid}_as" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -123,7 +123,7 @@ async def _(event):
             await silently_send_message(bot_conv, "/done")
 
     await event.edit(f"**BOOM BOI!**\n`Sticker added! This sticker has been stolen to` [this place](t.me/addstickers/{packshortname})"
-                     f" by {DEFAULTUSER}")
+                     f" by {DEFAULTUSER}")""
 
 
 @borg.on(admin_cmd(pattern="packinfo"))
