@@ -38,6 +38,16 @@
       "description": "Get your own API key from https://www.remove.bg/ or feel free to use http://telegram.dog/Remove_BGBot",
       "required": false
     },
+    "PRIVATE_GROUP_BOT_API_ID": {
+      "description": "Send .get_id in any group to fill this value.",
+      "value": "-100",
+      "required": false
+    },
+    "PRIVATE_CHANNEL_BOT_API_ID": {
+      "description": "Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!",
+      "value": "-100",
+      "required": false
+    },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
       "value": "",
