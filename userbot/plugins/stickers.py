@@ -46,8 +46,8 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"{user.first_name} Pack  {userid}"
-    packshortname = f"{user.first_name}_pack_{userid}"  # format: Uni_Borg_userid
+    packname = f"Kanger ki gufa me {userid}"
+    packshortname = f"Kang_ki_gufa_me_{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "@UniBorg_Sticker.png"
@@ -56,11 +56,11 @@ async def _(event):
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"{user.first_name}'s Animated kang pack"
+        packname = f"{userid}'s @AnimatedStickersGroup"
         if userid == 719877937:
-            packshortname = "TheKANGpack_Animated"
+            packshortname = "TheKang_Animated"
         else:
-            packshortname = f"Kang_Pack_{userid}_as" # format: Uni_Borg_userid
+            packshortname = f"Kanger_Boi_{userid}_as" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -123,7 +123,7 @@ async def _(event):
             await silently_send_message(bot_conv, "/done")
 
     await event.edit(f"**BOOM BOI!**\n`Sticker added! This sticker has been stolen to` [this place](t.me/addstickers/{packshortname})"
-                     f" by {DEFAULTUSER}")""
+                     f" by {DEFAULTUSER}")
 
 
 @borg.on(admin_cmd(pattern="packinfo"))
