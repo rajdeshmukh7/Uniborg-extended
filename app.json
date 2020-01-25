@@ -77,6 +77,10 @@
       "description": "Get an API Key from http://OCR.Space",
       "required": false
     },
+    "SCREEN_SHOT_LAYER_ACCESS_KEY": {
+      "description": "Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture",
+      "required": false
+    },
     "HEROKU_APP_NAME": {
       "description": "The Value of App Name you filled in right on top.Required for updater to work.",
       "value": "",
