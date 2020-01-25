@@ -1,6 +1,6 @@
 🅆🄰🅁🄽🄸🄽🄶: 🅄🅂🄴 🅃🄷🄸🅂 🅁🄴🄿🄾 🄰🅃 🅈🄾🅄🅁 🄾🅆🄽 🅁🄸🅂🄺
 
-𝗖𝗹𝗶𝗰𝗸 𝗕𝗲𝗹𝗼𝘄 𝗧𝗼 𝗗𝗲𝗽𝗹𝗼𝘆 👇👇👇👇👇👇
+𝗖𝗹𝗶𝗰𝗸 𝗣𝗵𝗼𝘁𝗼 𝗕𝗲𝗹𝗼𝘄 𝗧𝗼 𝗗𝗲𝗽𝗹𝗼𝘆 👇👇👇👇👇👇
 
 [![Deploy](https://telegra.ph/file/797acacdbfe43cac4c992.jpg)](https://heroku.com/deploy)
 
