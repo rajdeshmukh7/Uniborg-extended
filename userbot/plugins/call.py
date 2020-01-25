@@ -14,6 +14,13 @@ from telethon import events
 
 import asyncio
 
+from telethon.tl.types import ChannelParticipantsAdmins
+
+from platform import uname
+
+from userbot.utils import admin_cmd
+
+from userbot import ALIVE_NAME
 
 
 
