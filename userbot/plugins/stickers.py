@@ -1,4 +1,4 @@
-"""Make / Download Telegram Sticker Packs without installing Third Party applications
+"""Make / Download Telegram Sticker Packs without installing Third Party applications enjoy
 Available Commands:
 .kangsticker [Optional Emoji]
 .packinfo

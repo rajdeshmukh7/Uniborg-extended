@@ -1,7 +1,7 @@
 {
-  "name": "X-tra Telegram",
-  "description": "Userbot created by a SNAPDRAGON and custom fork by ANUBIS\n\n join https://t.me/X_tra_tele_support for any problems or support",
-  "logo": "https://telegra.ph/file/1be6c59f53fef57b5745b.jpg",
+  "name": "Uniborg Extended",
+  "description": "Only for ultra legends A custom fork by @rajdeshmukh7",
+  "logo": "https://telegra.ph/file/797acacdbfe43cac4c992.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Dark-Princ3/X-tra-Telegram/",
+  "repository": "https://github.com/rajdeshmukh7/Uniborg-extended/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -34,6 +34,20 @@
       "description": "Get this value by running python3 telesetup.py locally",
       "value": ""
     },
+    "REM_BG_API_KEY": {
+      "description": "Get your own API key from https://www.remove.bg/ or feel free to use http://telegram.dog/Remove_BGBot",
+      "required": false
+    },
+    "PRIVATE_GROUP_BOT_API_ID": {
+      "description": "Send .get_id in any group to fill this value.",
+      "value": "-100",
+      "required": false
+    },
+    "PRIVATE_CHANNEL_BOT_API_ID": {
+      "description": "Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!",
+      "value": "-100",
+      "required": false
+    },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
       "value": "",
@@ -57,6 +71,14 @@
     "SUDO_USERS": {
       "description": "Makes your acc and bot stable",
       "value": "742506768",
+      "required": false
+    },
+    "OCR_SPACE_API_KEY": {
+      "description": "Get an API Key from http://OCR.Space",
+      "required": false
+    },
+    "SCREEN_SHOT_LAYER_ACCESS_KEY": {
+      "description": "Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture",
       "required": false
     },
     "HEROKU_APP_NAME": {
