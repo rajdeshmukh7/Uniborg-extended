@@ -29,7 +29,7 @@ from telethon.tl.types import (
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check pinned in @botcritics"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check pinned in @XtraTgBot"
 
 @borg.on(admin_cmd(pattern="kang ?(.*)"))
 async def _(event):
@@ -46,8 +46,8 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"Kanger ki gufa me {userid}"
-    packshortname = f"Kang_ki_gufa_me_{userid}"  # format: Uni_Borg_userid
+    packname = f"Kanger_ ki gufa me {userid}"
+    packshortname = f"Kanger_ki_gufa_me_{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "@UniBorg_Sticker.png"
@@ -58,9 +58,9 @@ async def _(event):
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
         packname = f"{userid}'s @AnimatedStickersGroup"
         if userid == 719877937:
-            packshortname = "TheKang_Animated"
+            packshortname = "TheKanger_Animated"
         else:
-            packshortname = f"Kanger_Boi_{userid}_as" # format: Uni_Borg_userid
+            packshortname = f"Uni_Borg_{userid}_as" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
