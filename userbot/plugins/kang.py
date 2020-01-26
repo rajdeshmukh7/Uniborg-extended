@@ -1,8 +1,8 @@
-"""Make / Download Telegram Sticker Packs without installing Third Party applications enjoy
+"""Make / Download Telegram Sticker Packs without installing Third Party applications
 Available Commands:
-.kangsticker [Optional Emoji]
+.kang [Optional Emoji]
 .packinfo
-.getsticker"""
+.loda {for get stickers in a zip file}"""
 from telethon import events
 from io import BytesIO
 from PIL import Image
@@ -11,6 +11,7 @@ import datetime
 from collections import defaultdict
 import math
 import os
+import random
 import requests
 import zipfile
 from telethon.errors.rpcerrorlist import StickersetInvalidError
@@ -26,41 +27,57 @@ from telethon.tl.types import (
     InputStickerSetShortName,
     MessageMediaPhoto
 )
-from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from uniborg.util import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba, check pinned in @XtraTgBot"
+
+KANGING_STR = [
+    "`Using Witchery to kang this sticker...`",
+    "`Plagiarising hehe...`",
+"`Aaham Brahmassami................`",
+    "`Inviting this sticker over to my pack...`",
+    "`Kanging this sticker...`",
+    "`Hey that's a nice sticker!\nMind if I kang?!..`",
+    "`hehe me stel ur stikér\nhehe.`",
+    "`Ay look over there (☉｡☉)!→\nWhile I kang this...`",
+    "`Roses are red violets are blue, kanging this sticker so my pacc looks cool`",
+    "`Imprisoning this sticker...`",
+    "`Mr.Steal Your Sticker is stealing this sticker...`",
+"`I am Stealing your Sticker.....\nGand Marao...`",
+"Why u bullin me.....\nರ╭╮ರ`",
+"`BOOM.... HEADSHOT...\n(ノಠ益ಠ)ノ...\n(⌐■-■)`",
+"`Me is having sux with ur GF....\nU can't du nthing...Hehe..\nಠ∀ಠ...(≧▽≦)`",
+    "`Aise tukur tukur kahe Dekh raha hain`",
+
+]
 
 @borg.on(admin_cmd(pattern="kang ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit("Reply to a photo to add to my personal sticker pack.NiBbI.")
+        await event.edit("Reply to a photo to add to my personal sticker pack.")
         return
     reply_message = await event.get_reply_message()
-    sticker_emoji = "🔥"
+    sticker_emoji = "🍆"
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
 
     me = borg.me
+    name = me.username
     userid = event.from_id
-    packname = f"{first_name} ki gufa me {userid}"
-    packshortname = f"{first_name}_ki_gufa_me_{userid}"  # format: Uni_Borg_userid
+    packname = f"@{name}'s kanged pack"
+    packshortname = f"puretaboo_gengbeng{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@UniBorg_Sticker.png"
+    file_ext_ns_ion = "chutiya_Sticker.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"{userid}'s AnimatedStickersPack"
-        if userid == 719877937:
-            packshortname = "{first_name}_Animated"
-        else:
-            packshortname = f"{first_name}{userid}_as" # format: Uni_Borg_userid
+        packname = f"@{name}'s_AnimatedStickers"
+        packshortname = f"{name}_kangedpok_{userid}"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -70,7 +87,7 @@ async def _(event):
             sticker.seek(0)
             uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
 
-    await event.edit("`Look dat way,it's a gurl!Meanwhile lemme kang this stcker over hehe 0.0`")
+    await event.edit(random.choice(KANGING_STR))
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -118,12 +135,10 @@ async def _(event):
             if "Sorry" in response.text:
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
-            await silently_send_message(bot_conv, response)
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"**BOOM BOI!**\n`Sticker added! This sticker has been stolen to` [this place](t.me/addstickers/{packshortname})"
-                     f" by {DEFAULTUSER}")
+    await event.edit(f"`This Sticker Is Raped! Plox Help this Sticker by Clicking` [HERE](t.me/addstickers/{packshortname})")
 
 
 @borg.on(admin_cmd(pattern="packinfo"))
@@ -162,7 +177,7 @@ async def _(event):
                      f"**Emojis In Pack:** {' '.join(pack_emojis)}")
 
 
-@borg.on(admin_cmd(pattern="getsticker ?(.*)"))
+@borg.on(admin_cmd(pattern="loda ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -181,7 +196,7 @@ async def _(event):
             return
         is_a_s = is_it_animated_sticker(reply_message)
         file_ext_ns_ion = "webp"
-        file_caption = "https://t.me/RoseSupport/33801"
+        file_caption = "`You are my Nigga`"
         if is_a_s:
             file_ext_ns_ion = "tgs"
             file_caption = "Forward the ZIP file to @AnimatedStickersRoBot to get lottIE JSON containing the vector information."
