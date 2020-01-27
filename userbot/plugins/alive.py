@@ -13,7 +13,7 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("**`Your bot is running ｀∇´)ψ`**\n\n"
                      "`Telethon version: 6.9.0\nPython: 3.7.3\n"
-                     "`Bot modded by:` [@Rajdeshmukh7]\n"
+                     "`The King of bots /n"
                      "`Database Status: Databases functioning normally!\n\nAlways with you, my master!\n`"
                      f"`My peru owner`: {DEFAULTUSER}\n"
                      "[Deploy this userbot Now](https://github.com/rajdeshmukh7/Uniborg-extended)")
